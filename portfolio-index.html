@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabarinath Sri Dhandapani — Aerospace Engineer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #1C1A18;
+    --bg-panel: #232019;
+    --bg-panel-2: #29251d;
+    --line: #3a352c;
+    --text: #EDE9E1;
+    --text-dim: #A79E8E;
+    --amber: #E8A33D;
+    --steel: #7C93A3;
+    --ok: #7FB88A;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    font-size:16px;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:var(--amber); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Header / Hero ---------- */
+  header.hero{
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;
+  }
+  .hero-identity{
+    display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap;
+  }
+  .photo-frame{
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    padding:6px;
+    flex-shrink:0;
+  }
+  .photo-frame img{
+    width:110px; height:141px;
+    object-fit:cover;
+    display:block;
+    filter:grayscale(15%);
+  }
+  .photo-frame .photo-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+    color:var(--text-dim);
+    text-align:center;
+    padding-top:5px;
+    letter-spacing:0.02em;
+  }
+  .hero h1{
+    font-size:clamp(28px, 4vw, 40px);
+    font-weight:700;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .hero .role{
+    color:var(--amber);
+    font-size:17px;
+    font-weight:500;
+    margin:0 0 18px;
+  }
+  .hero p.lede{
+    max-width:60ch;
+    color:var(--text-dim);
+    font-size:16px;
+    margin:0 0 20px;
+  }
+  .hero-links{
+    display:flex; gap:18px; flex-wrap:wrap; font-size:14px;
+  }
+  .hero-links a{color:var(--steel);}
+  .hero-links a:hover{color:var(--amber);}
+  .badge-visa{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ok);
+    border:1px solid var(--ok);
+    padding:5px 10px;
+    border-radius:3px;
+    white-space:nowrap;
+    align-self:flex-start;
+  }
+
+  /* ---------- Chart panel ---------- */
+  .chart-panel{
+    margin-top:36px;
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    padding:22px 22px 10px;
+  }
+  .chart-panel .chart-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+  }
+  .chart-panel svg{width:100%; height:auto; display:block;}
+  .legend{display:flex; gap:22px; font-family:'IBM Plex Mono', monospace; font-size:12px; padding:10px 0 4px; color:var(--text-dim);}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .swatch{width:14px; height:3px; display:inline-block;}
+
+  /* ---------- Section headings ---------- */
+  section{padding:52px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:28px;
+  }
+  .section-head h2{
+    font-size:22px; margin:0; font-weight:600;
+  }
+  .section-head .index{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--text-dim);
+    font-size:13px;
+  }
+
+  /* ---------- Project entries ---------- */
+  .project{
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    margin-bottom:20px;
+  }
+  .project-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:16px;
+    padding:18px 22px;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .project-head h3{margin:0; font-size:17px; font-weight:600;}
+  .project-head .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--text-dim);
+    text-align:right;
+  }
+  .project-body{padding:20px 22px 22px;}
+  .project-body p{margin:0 0 12px; color:var(--text-dim); font-size:15px;}
+  .project-body ul{margin:0 0 14px; padding-left:20px; color:var(--text-dim); font-size:15px;}
+  .project-body li{margin-bottom:6px;}
+  .project-links{font-size:13.5px; margin-top:6px;}
+
+  table.results{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+  }
+  table.results th, table.results td{
+    border:1px solid var(--line);
+    padding:8px 10px;
+    text-align:left;
+  }
+  table.results th{color:var(--text-dim); font-weight:500; background:var(--bg-panel-2);}
+  table.results td.hi{color:var(--amber);}
+
+  .status-tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    padding:2px 8px;
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    margin-bottom:10px;
+  }
+
+  /* ---------- Skills grid ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .skills-cell{background:var(--bg-panel); padding:16px 18px;}
+  .skills-cell h4{
+    margin:0 0 8px; font-size:13px; text-transform:none;
+    color:var(--amber); font-weight:600;
+  }
+  .skills-cell div.items{color:var(--text-dim); font-size:14px; line-height:1.7;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:40px 0 60px; color:var(--text-dim); font-size:14px;}
+  footer a{color:var(--steel);}
+
+  @media (max-width:600px){
+    .hero-top{flex-direction:column;}
+    .hero-identity{flex-direction:column; align-items:flex-start;}
+    .project-head{flex-direction:column;}
+    .project-head .meta{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="hero-identity">
+        <div class="photo-frame">
+          <img src="./headshot.jpg" alt="Sabarinath Sri Dhandapani">
+          <div class="photo-tag">REF: PORTRAIT</div>
+        </div>
+        <div>
+          <h1>Sabarinath Sri Dhandapani</h1>
+          <p class="role">Aerospace Engineer — Flight Dynamics, Control Systems &amp; CFD</p>
+        </div>
+      </div>
+      <span class="badge-visa">UK GRADUATE VISA — OPEN TO SPONSORSHIP</span>
+    </div>
+    <p class="lede">MSc Aerospace Engineering, University of Leicester. I build models, then find out where they break before anyone else does. This page shows the actual working, not just the conclusions.</p>
+    <div class="hero-links">
+      <a href="mailto:sabarinathsridhandapani@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/sabarinathsridhandapani">LinkedIn</a>
+      <a href="https://github.com/sabarinathsridhandapani">GitHub</a>
+      <a href="./Sabarinath_MasterCV_Updated.pdf" style="border:1px solid var(--amber); padding:4px 10px; border-radius:3px;">Download CV (PDF)</a>
+      <span class="mono" style="color:var(--text-dim)">Leicester, UK</span>
+    </div>
+
+    <div class="chart-panel">
+      <div class="chart-label">
+        <span>F-16 ALTITUDE-HOLD — NOMINAL VS. ROBUST (+20% A) — STEP RESPONSE</span>
+        <span>REF: FIG.1</span>
+      </div>
+      <!-- Real recreation of the nominal vs robust step response, using verified figures -->
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- grid -->
+        <g stroke="#3a352c" stroke-width="1">
+          <line x1="60" y1="20"  x2="60"  y2="250"/>
+          <line x1="60" y1="250" x2="740" y2="250"/>
+          <line x1="200" y1="20" x2="200" y2="250" stroke-dasharray="2 4"/>
+          <line x1="340" y1="20" x2="340" y2="250" stroke-dasharray="2 4"/>
+          <line x1="480" y1="20" x2="480" y2="250" stroke-dasharray="2 4"/>
+          <line x1="620" y1="20" x2="620" y2="250" stroke-dasharray="2 4"/>
+          <line x1="60" y1="135" x2="740" y2="135" stroke-dasharray="2 4"/>
+          <line x1="60" y1="20"  x2="740" y2="20"  stroke-dasharray="2 4"/>
+        </g>
+        <!-- axis labels -->
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#A79E8E">
+          <text x="55" y="264" text-anchor="middle">0</text>
+          <text x="200" y="264" text-anchor="middle">5</text>
+          <text x="340" y="264" text-anchor="middle">10</text>
+          <text x="480" y="264" text-anchor="middle">15</text>
+          <text x="620" y="264" text-anchor="middle">20</text>
+          <text x="740" y="264" text-anchor="middle">Time (s)</text>
+          <text x="48" y="254" text-anchor="end">0</text>
+          <text x="48" y="139" text-anchor="end">50</text>
+          <text x="48" y="24" text-anchor="end">100 ft</text>
+        </g>
+        <!-- reference line -->
+        <line x1="60" y1="22" x2="740" y2="22" stroke="#7C93A3" stroke-width="1" stroke-dasharray="4 3"/>
+        <!-- Nominal response: fast-ish rise, small overshoot, settles ~5.74s -->
+        <path d="M60,250 C110,250 130,60 165,32 C185,18 205,26 225,24 C245,23 260,23 300,22.5 C400,22 550,22 740,22"
+              fill="none" stroke="#7FB88A" stroke-width="2.5"/>
+        <!-- Robust (+20% A) response: slightly slower, no overshoot, settles ~7.22s -->
+        <path d="M60,250 C120,250 150,80 190,45 C215,30 235,25 255,23.5 C280,22.5 320,22 400,22 C500,22 620,22 740,22"
+              fill="none" stroke="#E8A33D" stroke-width="2.5"/>
+      </svg>
+      <div class="legend">
+        <span><span class="swatch" style="background:#7FB88A"></span>Nominal — 0.9% OS, 5.74s Ts</span>
+        <span><span class="swatch" style="background:#E8A33D"></span>Robust (+20% A) — 0% OS, 7.22s Ts</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="section-head">
+      <h2>Project Work</h2>
+      <span class="index mono">4 entries, 2020–2025</span>
+    </div>
+
+    <!-- PROJECT 1: F-16 -->
+    <div class="project">
+      <div class="project-head">
+        <h3>Altitude-Hold Autopilot — F-16 Longitudinal Dynamics</h3>
+        <div class="meta">MSc Research Project<br>May – Sep 2025</div>
+      </div>
+      <div class="project-body">
+        <span class="status-tag">FULL DATA VERIFIED</span>
+        <p>Built a 7-state linear state-space model of F-16 longitudinal dynamics (altitude, pitch angle, forward velocity, angle of attack, pitch rate, plus two further stability states) in MATLAB/Simulink, with throttle and elevator as control inputs. Augmented with an integral altitude-error state (8 states total) and confirmed full controllability — rank 8 — before designing the controller.</p>
+        <p>Designed a full-state-feedback LQR controller with integral action, tuning the Q/R weighting matrices to trade tracking speed against control effort. Stress-tested the design against a +20% increase in the state matrix A rather than trusting the nominal case alone.</p>
+        <table class="results">
+          <tr><th>Metric</th><th>Nominal</th><th>Robust (+20% A)</th></tr>
+          <tr><td>Steady-state error</td><td>0.023 ft</td><td class="hi">0.019 ft</td></tr>
+          <tr><td>Overshoot</td><td>0.9%</td><td class="hi">0%</td></tr>
+          <tr><td>Settling time (2%)</td><td>5.74 s</td><td class="hi">7.22 s</td></tr>
+          <tr><td>Rise time (10–90%)</td><td>3.47 s</td><td class="hi">3.49 s</td></tr>
+        </table>
+        <p>Both cases converge cleanly to the 100 ft reference — the controller holds up under a meaningfully perturbed system, not just the idealised nominal case.</p>
+        <div class="project-links"><a href="https://github.com/sabarinathsridhandapani/f16-altitude-hold-autopilot">→ Full repo, MATLAB script &amp; README</a></div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: Sensor Fusion -->
+    <div class="project">
+      <div class="project-head">
+        <h3>LiDAR–RADAR Sensor Fusion for Moving Target Detection</h3>
+        <div class="meta">Undergraduate Team Project (3-person)<br>Aug 2022 – Apr 2023</div>
+      </div>
+      <div class="project-body">
+        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
+        <p>Owned the Kalman filter design and MATLAB simulation workstream for the team, building a nonlinear moving-target motion model to fuse LiDAR and RADAR measurements into a single state estimate.</p>
+        <ul>
+          <li>Chose an Unscented Kalman Filter over the more conventional EKF after evaluating both against the model's nonlinear dynamics</li>
+          <li>Avoided the Jacobian linearisation error the EKF would have introduced given the target's nonlinear motion profile</li>
+        </ul>
+        <p>Comparative error metrics (UKF vs. EKF) from the original project aren't available in a form I can publish yet — this section will be updated with real figures if I revisit the original data.</p>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: Thrust Estimation -->
+    <div class="project">
+      <div class="project-head">
+        <h3>Dynamic Thrust Estimation of a Fixed-Wing UAV</h3>
+        <div class="meta">Undergraduate Project<br>Jan – Jun 2022</div>
+      </div>
+      <div class="project-body">
+        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
+        <p>Set up and solved a Moving Reference Frame (MRF) CFD model in ANSYS Fluent to estimate propeller thrust, defining rotating-zone boundaries and interface conditions rather than using a simplified actuator-disk approximation.</p>
+        <p>Ran the model across multiple propulsion configurations and compared thrust-to-drag trends between them to identify the best performance trade-off, feeding directly into the team's propulsion R&amp;D decision.</p>
+      </div>
+    </div>
+
+    <!-- PROJECT 4: Drone Structural Design -->
+    <div class="project">
+      <div class="project-head">
+        <h3>Metal-Detection Security Drone — Structural Design</h3>
+        <div class="meta">Undergraduate Project<br>Aug – Dec 2021</div>
+      </div>
+      <div class="project-body">
+        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
+        <p>Designed a tricopter airframe in CATIA around an integrated metal-detection sensor payload, applying lightweight aerospace structural principles to a non-standard multirotor configuration. Iterated the design to balance structural integrity, airframe weight, and payload placement — competing constraints with no single dominant solution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="section-head">
+      <h2>Tools &amp; Methods</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skills-cell">
+        <h4>Simulation &amp; Control</h4>
+        <div class="items">MATLAB / Simulink<br>LQR design<br>State-space modelling<br>Kalman filtering (EKF/UKF)</div>
+      </div>
+      <div class="skills-cell">
+        <h4>CFD &amp; Thermal</h4>
+        <div class="items">ANSYS Fluent (MRF)<br>STAR-CCM+ / Simcenter<br>COMSOL Multiphysics<br>Fluid–structure interaction</div>
+      </div>
+      <div class="skills-cell">
+        <h4>CAD &amp; Design</h4>
+        <div class="items">CATIA<br>SOLIDWORKS (CSWP)<br>Parametric assembly modelling</div>
+      </div>
+      <div class="skills-cell">
+        <h4>Programming</h4>
+        <div class="items">Python<br>MATLAB<br>C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education">
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>MSc Aerospace Engineering</h3>
+        <div class="meta">University of Leicester, UK<br>2024 – 2025</div>
+      </div>
+      <div class="project-body">
+        <p>Specialised in aerodynamic modelling, flight dynamics, computational simulation, and control systems engineering. Core modules: Advanced Fluid Dynamics (turbulence modelling theory, boundary layer theory, heat transfer and thermal analysis), Computational Methods, Systems Modelling, Flight Mechanics, Control Engineering.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>BEng (Hons) Aeronautical Engineering</h3>
+        <div class="meta">Kumaraguru College of Technology, India<br>2019 – 2023</div>
+      </div>
+      <div class="project-body">
+        <p>GPA 3.2/4.0 (UK equivalent: Upper Second-Class Honours, 2:1). Core strengths: aerodynamics, structures, propulsion systems, CFD. Leadership: Treasurer — KI Aero Modelling Club; Event Lead — SEDS KCT.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <div class="section-head">
+      <h2>Experience</h2>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>Intern Trainee</h3>
+        <div class="meta">SASTRA University, India<br>Feb – Apr 2022</div>
+      </div>
+      <div class="project-body">
+        <p>Correlated ANSYS Fluent aerodynamic predictions against physical wind-tunnel test data. Cross-trained in composites manufacturing and 3D printing alongside the aerodynamic testing work.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>Intern Trainee</h3>
+        <div class="meta">CIPET, Chennai, India<br>Jun – Sep 2022</div>
+      </div>
+      <div class="project-body">
+        <p>Analysed industrial manufacturing and quality-control processes, building practical understanding of production-floor engineering standards.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>Design Intern</h3>
+        <div class="meta">Space Technology and Aeronautical Rocketry (STAR), India<br>Oct 2020 – Jan 2021</div>
+      </div>
+      <div class="project-body">
+        <p>Designed and simulated a model rocket and static test bed using OpenRocket and Proteus — early hands-on exposure to aerospace R&amp;D workflows.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-head">
+        <h3>Logistics Associate</h3>
+        <div class="meta">GXO Logistics, UK<br>Nov 2025 – Present</div>
+      </div>
+      <div class="project-body">
+        <p>Full-time role held in parallel with a structured, active job search in aerospace engineering — a bridge, not a career direction. Promoted twice within 11 months (Warehouse Operator → Warehouse Associate → Logistics Associate).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section id="certifications">
+    <div class="section-head">
+      <h2>Certifications</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skills-cell">
+        <h4>Ansys Certified Associate</h4>
+        <div class="items">Foundations in Fluid Dynamics<br>Foundations in Heat Transfer</div>
+      </div>
+      <div class="skills-cell">
+        <h4>COMSOL Multiphysics Training</h4>
+        <div class="items">Aerothermal &amp; Conjugate Heat Transfer<br>Fluid-Structure Interaction for Aerospace Structures</div>
+      </div>
+      <div class="skills-cell">
+        <h4>MathWorks</h4>
+        <div class="items">MATLAB Onramp &amp; Simulink Onramp</div>
+      </div>
+      <div class="skills-cell">
+        <h4>Other</h4>
+        <div class="items">STAR-CCM+ for a Beginner (Flowthermolab)<br>Dassault Systèmes CSWP — Mechanical Design<br>Microsoft Azure Fundamentals (AZ-900)</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Full CV available on request — <a href="mailto:sabarinathsridhandapani@gmail.com">sabarinathsridhandapani@gmail.com</a> · <a href="tel:07741032806">07741032806</a></p>
+    <p class="mono" style="font-size:12px; color:var(--text-dim);">Last updated September 2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
