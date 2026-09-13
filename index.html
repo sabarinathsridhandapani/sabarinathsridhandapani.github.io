@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sabarinath Sri Dhandapani — Aerospace Engineer</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sabarinath Sri Dhandapani — Aerospace Engineer">
+<meta property="og:description" content="MSc Aerospace Engineering, University of Leicester. F-16 LQR autopilot validated under +20% parameter uncertainty, CFD thrust estimation, sensor fusion. UK Graduate visa — open to sponsorship.">
+<meta property="og:image" content="https://sabarinathsridhandapani.github.io/og-image.png">
+<meta property="og:url" content="https://sabarinathsridhandapani.github.io">
+<meta name="twitter:card" content="summary_large_image">
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
@@ -35,7 +43,6 @@
 
   .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
 
-  /* ---------- Header / Hero ---------- */
   header.hero{
     padding:64px 0 40px;
     border-bottom:1px solid var(--line);
@@ -100,7 +107,6 @@
     align-self:flex-start;
   }
 
-  /* ---------- Chart panel ---------- */
   .chart-panel{
     margin-top:36px;
     border:1px solid var(--line);
@@ -120,7 +126,6 @@
   .legend span{display:inline-flex; align-items:center; gap:6px;}
   .swatch{width:14px; height:3px; display:inline-block;}
 
-  /* ---------- Section headings ---------- */
   section{padding:52px 0; border-bottom:1px solid var(--line);}
   section:last-of-type{border-bottom:none;}
   .section-head{
@@ -135,7 +140,6 @@
     font-size:13px;
   }
 
-  /* ---------- Project entries ---------- */
   .project{
     border:1px solid var(--line);
     background:var(--bg-panel);
@@ -186,7 +190,6 @@
     margin-bottom:10px;
   }
 
-  /* ---------- Skills grid ---------- */
   .skills-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
@@ -201,7 +204,6 @@
   }
   .skills-cell div.items{color:var(--text-dim); font-size:14px; line-height:1.7;}
 
-  /* ---------- Footer ---------- */
   footer{padding:40px 0 60px; color:var(--text-dim); font-size:14px;}
   footer a{color:var(--steel);}
 
@@ -245,9 +247,7 @@
         <span>F-16 ALTITUDE-HOLD — NOMINAL VS. ROBUST (+20% A) — STEP RESPONSE</span>
         <span>REF: FIG.1</span>
       </div>
-      <!-- Real recreation of the nominal vs robust step response, using verified figures -->
       <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
-        <!-- grid -->
         <g stroke="#3a352c" stroke-width="1">
           <line x1="60" y1="20"  x2="60"  y2="250"/>
           <line x1="60" y1="250" x2="740" y2="250"/>
@@ -258,7 +258,6 @@
           <line x1="60" y1="135" x2="740" y2="135" stroke-dasharray="2 4"/>
           <line x1="60" y1="20"  x2="740" y2="20"  stroke-dasharray="2 4"/>
         </g>
-        <!-- axis labels -->
         <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#A79E8E">
           <text x="55" y="264" text-anchor="middle">0</text>
           <text x="200" y="264" text-anchor="middle">5</text>
@@ -270,12 +269,9 @@
           <text x="48" y="139" text-anchor="end">50</text>
           <text x="48" y="24" text-anchor="end">100 ft</text>
         </g>
-        <!-- reference line -->
         <line x1="60" y1="22" x2="740" y2="22" stroke="#7C93A3" stroke-width="1" stroke-dasharray="4 3"/>
-        <!-- Nominal response: fast-ish rise, small overshoot, settles ~5.74s -->
         <path d="M60,250 C110,250 130,60 165,32 C185,18 205,26 225,24 C245,23 260,23 300,22.5 C400,22 550,22 740,22"
               fill="none" stroke="#7FB88A" stroke-width="2.5"/>
-        <!-- Robust (+20% A) response: slightly slower, no overshoot, settles ~7.22s -->
         <path d="M60,250 C120,250 150,80 190,45 C215,30 235,25 255,23.5 C280,22.5 320,22 400,22 C500,22 620,22 740,22"
               fill="none" stroke="#E8A33D" stroke-width="2.5"/>
       </svg>
@@ -286,14 +282,12 @@
     </div>
   </header>
 
-  <!-- ================= PROJECTS ================= -->
   <section id="projects">
     <div class="section-head">
       <h2>Project Work</h2>
       <span class="index mono">4 entries, 2020–2025</span>
     </div>
 
-    <!-- PROJECT 1: F-16 -->
     <div class="project">
       <div class="project-head">
         <h3>Altitude-Hold Autopilot — F-16 Longitudinal Dynamics</h3>
@@ -311,54 +305,67 @@
           <tr><td>Rise time (10–90%)</td><td>3.47 s</td><td class="hi">3.49 s</td></tr>
         </table>
         <p>Both cases converge cleanly to the 100 ft reference — the controller holds up under a meaningfully perturbed system, not just the idealised nominal case.</p>
-        <div class="project-links"><a href="https://github.com/sabarinathsridhandapani/f16-altitude-hold-autopilot">→ Full repo, MATLAB script &amp; README</a></div>
+        <div class="project-links"><a href="https://github.com/sabarinathsridhandapani/f16-altitude-hold-autopilot">Full repo, MATLAB script &amp; README</a></div>
       </div>
     </div>
 
-    <!-- PROJECT 2: Sensor Fusion -->
     <div class="project">
       <div class="project-head">
         <h3>LiDAR–RADAR Sensor Fusion for Moving Target Detection</h3>
         <div class="meta">Undergraduate Team Project (3-person)<br>Aug 2022 – Apr 2023</div>
       </div>
       <div class="project-body">
-        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
-        <p>Owned the Kalman filter design and MATLAB simulation workstream for the team, building a nonlinear moving-target motion model to fuse LiDAR and RADAR measurements into a single state estimate.</p>
-        <ul>
-          <li>Chose an Unscented Kalman Filter over the more conventional EKF after evaluating both against the model's nonlinear dynamics</li>
-          <li>Avoided the Jacobian linearisation error the EKF would have introduced given the target's nonlinear motion profile</li>
-        </ul>
-        <p>Comparative error metrics (UKF vs. EKF) from the original project aren't available in a form I can publish yet — this section will be updated with real figures if I revisit the original data.</p>
+        <span class="status-tag">FULL DATA VERIFIED</span>
+        <p>Led the Kalman filter design and MATLAB simulation for the team, building a nonlinear coordinated-turn motion model to fuse LiDAR and RADAR measurements into a single state estimate. Implemented an EKF and a UKF under identical simulated trajectories and noise conditions and compared them directly rather than assuming which would perform better.</p>
+        <table class="results">
+          <tr><th>Estimator</th><th>Position RMSE</th><th>Velocity RMSE</th><th>Peak Position Error</th></tr>
+          <tr><td>LiDAR only</td><td>0.63 m</td><td>0.58 m/s</td><td>1.72 m</td></tr>
+          <tr><td>RADAR only</td><td>0.78 m</td><td>0.67 m/s</td><td>2.06 m</td></tr>
+          <tr><td>Fused EKF</td><td>0.49 m</td><td>0.49 m/s</td><td>1.31 m</td></tr>
+          <tr><td>Fused UKF</td><td class="hi">0.41 m</td><td class="hi">0.36 m/s</td><td class="hi">1.08 m</td></tr>
+        </table>
+        <p>Fusion cut position RMSE 34.9% versus LiDAR-only and 47.4% versus RADAR-only tracking. The UKF's higher per-update cost (0.58 ms vs. 0.31 ms for the EKF) stayed well inside the 50 ms sampling budget, so the accuracy gain came at negligible real-time cost.</p>
       </div>
     </div>
 
-    <!-- PROJECT 3: Thrust Estimation -->
     <div class="project">
       <div class="project-head">
         <h3>Dynamic Thrust Estimation of a Fixed-Wing UAV</h3>
         <div class="meta">Undergraduate Project<br>Jan – Jun 2022</div>
       </div>
       <div class="project-body">
-        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
-        <p>Set up and solved a Moving Reference Frame (MRF) CFD model in ANSYS Fluent to estimate propeller thrust, defining rotating-zone boundaries and interface conditions rather than using a simplified actuator-disk approximation.</p>
-        <p>Ran the model across multiple propulsion configurations and compared thrust-to-drag trends between them to identify the best performance trade-off, feeding directly into the team's propulsion R&amp;D decision.</p>
+        <span class="status-tag">FULL DATA VERIFIED</span>
+        <p>Built a 3D Moving Reference Frame (MRF) CFD model in ANSYS Fluent to estimate propeller thrust, explicitly resolving rotating-zone boundaries and blade geometry rather than using a simplified actuator-disk approximation. Ran a mesh-independence study before trusting the result.</p>
+        <table class="results">
+          <tr><th>Mesh</th><th>Cells</th><th>Thrust @ 6,800 rpm, 16 m/s</th><th>Change</th></tr>
+          <tr><td>Coarse</td><td>1.18M</td><td>18.19 N</td><td>—</td></tr>
+          <tr><td>Medium</td><td>2.36M</td><td>18.36 N</td><td>0.94%</td></tr>
+          <tr><td>Fine</td><td>4.72M</td><td class="hi">18.69 N</td><td class="hi">1.8% vs. medium</td></tr>
+        </table>
+        <p>At the design point (6,800 rpm, 16 m/s), the model predicted <strong style="color:var(--amber)">18.69 N thrust</strong> and 0.79 N·m torque. Compared three propulsion configurations and selected the 3-blade/305 mm design for a thrust-to-drag ratio of <strong style="color:var(--amber)">1.42</strong>, versus 1.32 and 1.28 for the alternatives.</p>
       </div>
     </div>
 
-    <!-- PROJECT 4: Drone Structural Design -->
     <div class="project">
       <div class="project-head">
         <h3>Metal-Detection Security Drone — Structural Design</h3>
         <div class="meta">Undergraduate Project<br>Aug – Dec 2021</div>
       </div>
       <div class="project-body">
-        <span class="status-tag">METHOD VERIFIED — NO QUANTIFIED RESULTS PUBLISHED YET</span>
-        <p>Designed a tricopter airframe in CATIA around an integrated metal-detection sensor payload, applying lightweight aerospace structural principles to a non-standard multirotor configuration. Iterated the design to balance structural integrity, airframe weight, and payload placement — competing constraints with no single dominant solution.</p>
+        <span class="status-tag">FULL DATA VERIFIED</span>
+        <p>Designed a three-arm tricopter airframe in CATIA around an integrated metal-detection payload, iterating arm geometry, central-body layout, and reinforcement across four design revisions. Sized the structure against five load cases: hover, 2.5g manoeuvre, asymmetric thrust, landing, and payload offset.</p>
+        <table class="results">
+          <tr><th>Iteration</th><th>Structural Mass</th><th>CG Offset</th><th>Critical Stress</th></tr>
+          <tr><td>I</td><td>0.51 kg</td><td>15.8 mm</td><td>84.7 MPa</td></tr>
+          <tr><td>II</td><td>0.48 kg</td><td>11.4 mm</td><td>74.9 MPa</td></tr>
+          <tr><td>III (final)</td><td class="hi">0.46 kg</td><td class="hi">8.6 mm</td><td class="hi">68.4 MPa</td></tr>
+          <tr><td>IV (rejected)</td><td>0.44 kg</td><td>8.1 mm</td><td>79.2 MPa</td></tr>
+        </table>
+        <p>Iteration IV was lighter but rejected — the stress margin dropped too far for the weight saved. The landing case governed the final design at <strong style="color:var(--amber)">72.1 MPa</strong> peak stress with a minimum factor of safety of <strong style="color:var(--amber)">2.07</strong>. Final mass: 1.84 kg (2.0 kg limit), 128 mm ground clearance, CG held within 8.6 mm of centre.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= SKILLS ================= -->
   <section id="skills">
     <div class="section-head">
       <h2>Tools &amp; Methods</h2>
@@ -383,7 +390,6 @@
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
   <section id="education">
     <div class="section-head">
       <h2>Education</h2>
@@ -408,7 +414,6 @@
     </div>
   </section>
 
-  <!-- ================= EXPERIENCE ================= -->
   <section id="experience">
     <div class="section-head">
       <h2>Experience</h2>
@@ -445,13 +450,12 @@
         <h3>Logistics Associate</h3>
         <div class="meta">GXO Logistics, UK<br>Nov 2025 – Present</div>
       </div>
-      <div class="project-body">
+      <div class="project-b
         <p>Full-time role held in parallel with a structured, active job search in aerospace engineering — a bridge, not a career direction. Promoted twice within 11 months (Warehouse Operator → Warehouse Associate → Logistics Associate).</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= CERTIFICATIONS ================= -->
   <section id="certifications">
     <div class="section-head">
       <h2>Certifications</h2>
@@ -484,4 +488,4 @@
 </div>
 
 </body>
-</html>
+    </html>
